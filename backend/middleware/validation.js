@@ -1,9 +1,17 @@
-const joi = require('joi');
+ const joi = require('joi');
 
-/*
-function validation (res,req,next){
-    firstname = joi.string().min(3).max(30).required();
-    lastname = joi.string().min(3).max(30).required();
-    email = joi.string().emain().required();
+function validationuser(req, res, next){
+    const schema = joi.object({
+        FirstName: joi.string().required(),
+        LastName: joi.string().required(),
+        UserName: joi.string().required(),
+        Email: joi.string().required().email(),
+        Password: joi.string().required(),
+    })
+    const { error } = schema.validate(req.body);
+    if (error) {
+        return res.status(400).send(error.details[0].message)
+    }
+    next()
 }
-*/
+module.exports ={validationuser};
