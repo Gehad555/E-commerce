@@ -4,13 +4,13 @@ const router = express.Router();
 require('./config/db')
 const userRouter = require('./routes/UserRouter') 
 
-const port = 8000
+const port = 3000
 
 
 
 app.use(express.json())
 
-
+app.use('/user' , userRouter)
 
 
 
