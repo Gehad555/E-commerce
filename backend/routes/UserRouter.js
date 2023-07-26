@@ -62,7 +62,12 @@ const editUser = async (req, res, next) => {
     
     }
  
+const getUser = async (req, res) => {
+    const Email = req.params
+    const UserAccount = await User.findOne(Email)
+    res.status(200).send(UserAccount)
+}
 
 
 
-module.exports = {createUser , loginUser , editUser};
+module.exports = {createUser , loginUser , editUser , getUser};
