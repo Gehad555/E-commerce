@@ -12,6 +12,7 @@ router.post('/login',validationlogin, loginUser);//
 router.get('/products', getprducts); //
 router.get('/products/:id', getprductsById);//
 router.post('/addproduct', addProductinstore);// only admin
+//********************
 router.get([], getCart);//
 router.post([], addproductCart);//
 router.delete([], deleteCart);//

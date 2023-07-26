@@ -5,5 +5,4 @@ const cartSchema = new mongoose.Schema({
     count: { type: Number, required: true },
 
 });
-const cartModel = mongoose.model('Cart', cartSchema);
-module.exports = cartModel;
+module.exports = cartSchema;
