@@ -1,6 +1,5 @@
 const mongoose = require('mongoose')
 
-
 const UserShcema = mongoose.Schema({
     FirstName : "string" ,
     LastName  : "string" ,
