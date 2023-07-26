@@ -3,13 +3,15 @@ const router = express.Router();
 const {Product} = require('../models/productModel');
 
 const getprducts = async (req, res) => {
-    try {
-        const products = await Product.find({});
-        res.send(products);
-    } catch (error) {
-        res.status(500).send({ message: error.message });
+    try{
+        const product = await Product.find({});
+        res.json(product);
     }
-};
+    catch(error){
+        res.status(500).json({message:error.message});
+    }
+}
+
 const getprductsById = async (req, res) => {
     try{
         const product = await Product.findById(req.params.id);
