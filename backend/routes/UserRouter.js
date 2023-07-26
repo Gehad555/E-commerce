@@ -28,7 +28,7 @@ const createUser = async(req, res)=>{
     }
 }  
 const loginUser = async(req, res , next )=>{
-   const {FirstName,LastName,UserName,Email,Password} = req.body;
+   const {Email,Password} = req.body;
     try{
        const finduser = await User.findOne({Email})
         if(!finduser){
